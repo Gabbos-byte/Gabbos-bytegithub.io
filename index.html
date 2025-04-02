@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios de mantenimiento e instalación de computadoras. Reparaciones, asesoría técnica y soporte remoto.">
+    <meta name="author" content="Tu Nombre">
+    <meta name="keywords" content="mantenimiento de computadoras, instalación de software, soporte técnico">
+    <meta property="og:title" content="Webservice - Mantenimiento e Instalación de Computadoras">
+    <meta property="og:description" content="Brindamos soluciones tecnológicas, instalación de software y soporte remoto.">
+    <meta property="og:image" content="imagen_destacada.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#007bff">
+
+    <title>Webservice - Mantenimiento y Soporte Técnico</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #search {
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+        #search:focus {
+            border-color: #0056b3;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 91, 187, 0.5);
+        }
+        .button-link {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+        }
+        .button-link:hover {
+            background: linear-gradient(90deg, #0056b3, #003f7f);
+            transform: scale(1.05);
+        }
+        nav {
+            margin: 20px;
+        }
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .carousel {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .carousel img {
+            width: 600px;
+            height: 400px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .button-link {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+        .maintenance-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            opacity: 0; /* Comienza invisible */
+            transform: translateY(50px); /* Comienza desplazado */
+            transition: opacity 1s ease-out, transform 1s ease-out; /* Efecto de desvanecimiento y deslizamiento */
+        }
+
+        .maintenance-info.visible {
+            opacity: 1;
+            transform: translateY(0); /* Vuelve a su posición original */
+        }
+
+        /* Estilos de la sección de contacto */
+        #contact {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #contact h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        #contact p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #0056b3;
+        }
+
+        .contact-methods p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .contact-methods a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-methods a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Estilos para los cuadros de texto */
+        .info-boxes {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 45%;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
+
+        /* Estilo para la columna de la izquierda */
+        .info-box.left {
+            margin-right: 5%;
+        }
+
+        /* Estilo para la columna de la derecha */
+        .info-box.right {
+            margin-left: 5%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenido a Webservice</h1>
+        <button id="loginBtn">Iniciar Sesión / Registrarse</button>
+        <a href="archivos.html" class="button-link">Ver Archivos</a>
+    </header>
+
+    <nav>
+        <input type="text" id="search" placeholder="Buscar archivos..." oninput="searchFiles()">
+        <div id="suggestions" class="suggestions"></div>
+    </nav>
+
+    <section id="content">
+        <h2>Trabajos realizados</h2>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="imagen1.jpg" alt="Imagen 1">
+                <img src="imagen2.jpg" alt="Imagen 2">
+                <img src="imagen3.jpg" alt="Imagen 3">
+                <img src="imagen4.jpg" alt="Imagen 4">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <!-- Contenedor para organizar las secciones en dos columnas -->
+<div class="container" style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+    
+    <!-- Sección de Nuestros Servicios -->
+    <div class="services" style="flex: 1; min-width: 300px;">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Venta de refacciones</li>
+            <li>Asesoría especializada</li>
+            <li>Servicio de instalación</li>
+        </ul>
+    </div>
+
+    <!-- Sección de Contacto Rápido -->
+    <div class="contact" style="flex: 1; min-width: 300px;">
+        <h2>Contacto Rápido</h2>
+        <p>Teléfono: 9911022738</p>
+        <p>Email: angel.martin@alumno.universidadlatino.edu.mx</p>
+    </div>
+
+</div>
+
+
+        <div class="maintenance-info" id="maintenanceInfo">
+            <h3>Servicios de Mantenimiento y Instalación de Computadoras</h3>
+            <p>En nuestra página, ofrecemos servicios especializados en el mantenimiento de computadoras, reparación de hardware y software, así como la instalación de sistemas operativos y aplicaciones. Si necesitas asistencia con la configuración de tu equipo, ¡estamos aquí para ayudarte!</p>
+        </div>
+
+        <!-- Cuadros de texto -->
+        <div class="info-boxes">
+            <div class="info-box left">
+                <h3>¿Qué hacemos?</h3>
+                <p>Ofrecemos soluciones de mantenimiento para hardware y software. Nos especializamos en optimización de equipos, instalaciones de sistemas y resolución de fallos técnicos.</p>
+            </div>
+            <div class="info-box right">
+                <h3>Asesoría Técnica</h3>
+                <p>Te ayudamos a elegir las mejores opciones tecnológicas para tus necesidades. Contamos con personal especializado para brindarte asesoría profesional.</p>
+            </div>
+            <div class="info-box left">
+                <h3>Instalación de Software</h3>
+                <p>Instalamos sistemas operativos, software de oficina y herramientas especializadas, asegurando que tu equipo funcione correctamente desde el inicio.</p>
+            </div>
+            <div class="info-box right">
+                <h3>Soporte Remoto</h3>
+                <p>Si tienes problemas con tu computadora, ofrecemos soporte remoto para resolverlos de manera rápida y eficiente, sin importar dónde te encuentres.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contact">
+        <h2>Contáctanos</h2>
+        <p>Si tienes alguna duda o necesitas más información sobre nuestros servicios, ¡no dudes en contactarnos!</p>
+        
+        <!-- Redes sociales -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/angelgabriel.martinchim" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/Gabbos_23" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/gabbo23_/" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/tuPerfil" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+        <!-- Medio de contacto -->
+        <div class="contact-methods">
+            <p><strong>Correo electrónico:</strong> <a href="mailto:tuCorreo@example.com">angel.martin@alumno.universidadlatino.edu.mx</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/9911022738" target="_blank">Envíanos un mensaje</a></p>
+        </div>
+    </section>
+
+    <script>
+        let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-images img');
+const totalImages = images.length;
+const carouselContainer = document.querySelector('.carousel-images');
+let autoSlideInterval;
+
+function updateCarousel() {
+    carouselContainer.style.transform = `translateX(-${currentIndex * 600}px)`; // Mueve el carrusel según el índice actual
+}
+
+function moveSlide(step) {
+    currentIndex = (currentIndex + step + totalImages) % totalImages; // Asegura que el índice se mantenga dentro de los límites del carrusel
+    updateCarousel(); // Actualiza la vista del carrusel
+    resetAutoSlide(); // Reinicia el auto-slide para que no se detenga
+}
+
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % totalImages; // Avanza al siguiente índice de la imagen
+    updateCarousel(); // Actualiza la vista del carrusel
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval); // Detiene el slide automático
+    autoSlideInterval = setInterval(autoSlide, 3000); // Reinicia el auto-slide con intervalo de 10 segundos
+}
+
+// Iniciar el cambio automático
+autoSlideInterval = setInterval(autoSlide, 3000); // Inicia el carrusel automáticamente cada 10 segundos
+
+        // Función para buscar y mostrar archivos relacionados
+        const files = [
+            { name: 'Arquitectura interna', href: 'archivo1.pdf' },
+            { name: 'Rendimiento del procesador', href: 'archivo2.pdf' },
+            { name: 'Memoria Cache', href: 'archivo3.pdf' },
+            { name: 'Memoria Segmentada', href: 'archivo4.pdf' },
+            { name: 'coming soon', href: 'archivo5.pdf' },
+            { name: 'coming soon', href: 'archivo6.pdf' },
+        ];
+
+        function searchFiles() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const suggestions = document.getElementById('suggestions');
+            suggestions.innerHTML = ''; // Limpiar sugerencias previas
+
+            if (query) {
+                const filteredFiles = files.filter(file => file.name.toLowerCase().includes(query));
+                if (filteredFiles.length > 0) {
+                    suggestions.style.display = 'block'; // Mostrar sugerencias
+                    filteredFiles.forEach(file => {
+                        const suggestionItem = document.createElement('div');
+                        suggestionItem.classList.add('suggestion-item');
+                        suggestionItem.textContent = file.name;
+                        suggestionItem.onclick = function() {
+                            window.open(file.href, '_blank');
+                        };
+                        suggestions.appendChild(suggestionItem);
+                    });
+                } else {
+                    suggestions.style.display = 'none'; // Si no hay coincidencias, ocultar
+                }
+            } else {
+                suggestions.style.display = 'none'; // Si no hay texto en el buscador, ocultar
+            }
+        }
+
+        // Mostrar el mensaje de mantenimiento de forma animada
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('maintenanceInfo').classList.add('visible');
+            }, 1000); // Aparecerá después de 1 segundo
+        };
+    </script>
+
+</body>
+</html>
