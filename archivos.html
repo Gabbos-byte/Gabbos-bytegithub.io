@@ -1,0 +1,66 @@
+<!-- archivos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivos - Webservice</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .file-link {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            width: 45%;
+        }
+        .file-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Archivos Disponibles</h1>
+    </header>
+
+    <nav>
+        <a href="index.html" style="color: #007bff; font-size: 18px;">Regresar a la página principal</a>
+    </nav>
+
+    <section>
+        <div class="file-container">
+            <a href="archivo1.pdf" class="file-link" target="_blank">Arquitectura interna</a>
+            <a href="archivo2.pdf" class="file-link" target="_blank">Rendimiento del procesador</a>
+            <a href="archivo3.pdf" class="file-link" target="_blank">Memoria Cache</a>
+            <a href="archivo4.pdf" class="file-link" target="_blank">Memoria Segmentada</a>
+            <a href="archivo5.pdf" class="file-link" target="_blank">coming soon</a>
+            <a href="archivo6.pdf" class="file-link" target="_blank">coming soon</a>
+        </div>
+    </section>
+
+</body>
+</html>
